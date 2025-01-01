@@ -12,7 +12,7 @@
   "allow_running": false,
   "show_map_name": false,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": null,
+  "connections": 0,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
@@ -104,6 +104,33 @@
       "var": "VAR_LITTLEROOT_INTRO_STATE",
       "var_value": "0",
       "script": "InsideOfTruck_EventScript_SetIntroFlags"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_INSIDEOFTRUCK_STATE",
+      "var_value": "0",
+      "script": "Options_Menu"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_INSIDEOFTRUCK_STATE",
+      "var_value": "0",
+      "script": "Options_Menu"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_INSIDEOFTRUCK_STATE",
+      "var_value": "0",
+      "script": "Options_Menu"
     }
   ],
   "bg_events": [

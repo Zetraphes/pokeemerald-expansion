@@ -138,6 +138,10 @@ static const u8 sGenericMulchDesc[]   = _("A fertilizer that\n"
                                           "is unsuitable for\n"
                                           "local soil.");
 
+static const u8 sInfiniteRepelDesc[] = _("Repels all wild\n"
+                                         "Pokémon for any\n"
+                                         "number of steps.");
+
 const struct Item gItemsInfo[] =
 {
     [ITEM_NONE] =
@@ -13600,6 +13604,19 @@ const struct Item gItemsInfo[] =
         .flingPower = 10,
         .iconPic = gItemIcon_BerserkGene,
         .iconPalette = gItemIconPalette_BerserkGene,
+    },
+
+    [ITEM_INFINITE_REPEL] =
+    {
+        .name = _("Infinite Repel"),
+        .price = 0,
+        .description = sInfiniteRepelDesc,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_InfiniteRepel,
+        .iconPic = gItemIcon_Repel,
+        .iconPalette = gItemIconPalette_MaxRepel
     },
 
     [ITEM_FAIRY_FEATHER] =

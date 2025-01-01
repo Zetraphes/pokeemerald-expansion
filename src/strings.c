@@ -1563,9 +1563,24 @@ const u8 gText_Berries[] = _("BERRIES");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOn[] = _("The Infinite Repel is now ON!{PAUSE_UNTIL_PRESS}");
+const u8 gText_InfiniteRepelOff[] = _("The Infinite Repel is now OFF!{PAUSE_UNTIL_PRESS}");
 const u8 gText_Fertilize[] = _("FERTILIZE");
 const u8 gText_PlantBerry[] = _("PLANT BERRY");
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
 const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
 const u8 gText_Rename[] = _("RENAME");
+
+// Playthrough Options Menu
+const u8 gText_Randomizer[] = _("Randomizer");
+const u8 gText_ExitMenu[] = _("Exit");
+
+// Randomizer Options Menu
+const u8 gText_RandomStarter[] = _("Starters");
+const u8 gText_RandomWildEncounter[] = _("Wild PKMN");
+const u8 gText_RandomStatic[] = _("Static PKMN");
+const u8 gText_RandomAbility[] = _("Abilities");
+const u8 gText_RandomTrainerMon[] = _("Trainer PKMN");
+const u8 gText_RandomFieldItems[] = _("Field Items");
+const u8 gText_RandomizeAll[] = _("Randomize all");

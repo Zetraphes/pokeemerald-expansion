@@ -61,6 +61,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "randomizer.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -3465,6 +3466,10 @@ u16 GetAbilityBySpecies(u16 species, u8 abilityNum)
         gLastUsedAbility = gSpeciesInfo[species].abilities[i];
     }
 
+    #if RANDOMIZER_AVAILABLE == TRUE
+        gLastUsedAbility = RandomizeAbility(species, abilityNum, gLastUsedAbility);
+    #endif
+    
     return gLastUsedAbility;
 }
 
@@ -3825,7 +3830,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     {
                         u32 currentLevelCap = GetCurrentLevelCap();
                         if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap])
+                        { 
                             dataUnsigned = gExperienceTables[gSpeciesInfo[species].growthRate][currentLevelCap];
+
+                            if (dataUnsigned == 0)
+                                dataUnsigned = 1;
+                        }
                     }
                     else if (dataUnsigned > gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL])
                     {

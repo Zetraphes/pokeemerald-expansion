@@ -778,6 +778,24 @@ static const struct MenuAction MultichoiceList_BerryPlot[] =
     {gText_Exit},
 };
 
+static const struct MenuAction MultichoiceList_PlaythroughSettings[] =
+{
+    {gText_Randomizer},
+    {gText_ExitMenu},
+};
+
+static const struct MenuAction MultichoiceList_RandomizerSettings[] =
+{
+    {gText_RandomStarter},
+    {gText_RandomWildEncounter},
+    {gText_RandomStatic},
+    {gText_RandomAbility},
+    {gText_RandomTrainerMon},
+    {gText_RandomFieldItems},
+    {gText_RandomizeAll},
+    {gText_ExitMenu},
+};
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -906,6 +924,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_PLAYTHROUGH_SETTINGS]       = MULTICHOICE(MultichoiceList_PlaythroughSettings),
+    [MULTI_RANDOMIZER_SETTINGS]        = MULTICHOICE(MultichoiceList_RandomizerSettings),
 };
 
 const u8 *const gStdStrings[] =

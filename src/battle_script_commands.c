@@ -4683,7 +4683,7 @@ static void Cmd_getexp(void)
                         u32 levelCap = GetCurrentLevelCap();
 
                         if (GetMonData(&gPlayerParty[*expMonId], MON_DATA_LEVEL) >= levelCap)
-                            gBattleMoveDamage = 0;
+                            gBattleMoveDamage = 1;
                         else if (gExperienceTables[growthRate][levelCap] < currentExp + gBattleMoveDamage)
                             gBattleMoveDamage = gExperienceTables[growthRate][levelCap] - currentExp;
                     }

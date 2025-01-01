@@ -821,6 +821,8 @@ extern const u8 gText_ItemFinderNothing[];
 extern const u8 gText_ItemFinderNearby[];
 extern const u8 gText_ItemFinderOnTop[];
 extern const u8 gText_CoinCase[];
+extern const u8 gText_InfiniteRepelOn[];
+extern const u8 gText_InfiniteRepelOff[];
 extern const u8 gText_PowderQty[];
 extern const u8 gText_BootedUpHM[];
 extern const u8 gText_BootedUpTM[];
@@ -2710,5 +2712,18 @@ extern const u8 gText_PlayerScurriedBackHome[];
 
 extern const u8 gText_Relearn[]; // move relearner from summary screen
 extern const u8 gText_Rename[]; // change nickname from summary screen
+
+// Playthrough Options
+extern const u8 gText_Randomizer[];
+extern const u8 gText_ExitMenu[];
+
+// Randomizer Options
+extern const u8 gText_RandomStarter[];
+extern const u8 gText_RandomWildEncounter[];
+extern const u8 gText_RandomStatic[];
+extern const u8 gText_RandomAbility[];
+extern const u8 gText_RandomTrainerMon[];
+extern const u8 gText_RandomFieldItems[];
+extern const u8 gText_RandomizeAll[];
 
 #endif // GUARD_STRINGS_H

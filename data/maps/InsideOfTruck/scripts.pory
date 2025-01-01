@@ -1,0 +1,171 @@
+raw `
+InsideOfTruck_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, InsideOfTruck_OnLoad
+	map_script MAP_SCRIPT_ON_RESUME, InsideOfTruck_OnResume
+	.byte 0
+
+InsideOfTruck_OnLoad:
+	setmetatile 4, 1, METATILE_InsideOfTruck_ExitLight_Top, FALSE
+	setmetatile 4, 2, METATILE_InsideOfTruck_ExitLight_Mid, FALSE
+	setmetatile 4, 3, METATILE_InsideOfTruck_ExitLight_Bottom, FALSE
+	end
+
+InsideOfTruck_OnResume:
+	setstepcallback STEP_CB_TRUCK
+	end
+
+InsideOfTruck_EventScript_SetIntroFlags::
+	lockall
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+	checkplayergender
+	goto_if_eq VAR_RESULT, MALE, InsideOfTruck_EventScript_SetIntroFlagsMale
+	goto_if_eq VAR_RESULT, FEMALE, InsideOfTruck_EventScript_SetIntroFlagsFemale
+	end
+
+InsideOfTruck_EventScript_SetIntroFlagsMale::
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F
+	setvar VAR_LITTLEROOT_INTRO_STATE, 1
+	setvar VAR_LEVEL_CAP, 15 
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 3, 10
+	releaseall
+	end
+
+InsideOfTruck_EventScript_SetIntroFlagsFemale::
+	setrespawn HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F
+	setvar VAR_LITTLEROOT_INTRO_STATE, 2
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL
+	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 1
+	setdynamicwarp MAP_LITTLEROOT_TOWN, 12, 10
+	releaseall
+	end
+
+InsideOfTruck_EventScript_MovingBox::
+	msgbox InsideOfTruck_Text_BoxPrintedWithMonLogo, MSGBOX_SIGN
+	end
+
+InsideOfTruck_Text_BoxPrintedWithMonLogo:
+	.string "The box is printed with a POKéMON logo.\p"
+	.string "It's a POKéMON brand moving and\n"
+	.string "delivery service.$"
+
+`
+// Options to customize Gameplay
+script Options_Menu {
+	lockall
+	//setflag(FLAG_CARE_PACKAGE)
+	setflag(FLAG_ENABLE_FOLLOWER)
+	do {
+		message ("Welcome to PLACEHOLDER!\nPlease choose a setting to change.")
+		multichoice(0, 0, MULTI_PLAYTHROUGH_SETTINGS, 1)
+		closemessage
+		if (var(VAR_RESULT) == 0){
+			call(Randomizer_Options)
+		}
+		elif (var(VAR_RESULT) == 1){
+			msgbox("Good luck and have fun!", MSGBOX_DEFAULT)
+			setvar(VAR_INSIDEOFTRUCK_STATE, 1)
+			releaseall
+			end
+		}
+		elif (var(VAR_RESULT) == 2){
+
+		}
+	} while (var(VAR_RESULT) < 4)
+}
+
+// Randomizer Options
+script Randomizer_Options{
+	lockall
+	do {
+		message ("Please choose a setting.")
+		multichoicegrid (0, 0, MULTI_RANDOMIZER_SETTINGS, 2, 1)
+		closemessage
+		if (var(VAR_RESULT) == 0){
+			msgbox ("Randomize Starter Pokémon?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x024)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x024)
+				}
+		}
+		elif (var(VAR_RESULT) == 1){
+			msgbox ("Randomize Wild Encounters?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x020)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x020)
+				}
+		}
+		elif (var(VAR_RESULT) == 2){
+			msgbox ("Randomize static Pokémon?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x023)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x023)
+				}
+		}
+		elif (var(VAR_RESULT) == 3){
+			msgbox("Randomize abilities?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x025)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x025)
+				}
+		}
+		elif (var(VAR_RESULT) == 4){
+			msgbox ("Randomize Trainer Pokémon?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x022)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x022)
+				}
+		}
+		elif (var(VAR_RESULT) == 5){
+			msgbox ("Randomize field items?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x021)
+					msgbox("Successfully randomized.", MSGBOX_DEFAULT)
+				} else {
+					clearflag(FLAG_UNUSED_0x021)
+				}
+		}
+		elif (var(VAR_RESULT) == 6){
+			msgbox ("Randomize everything?", MSGBOX_YESNO)
+				if (var(VAR_RESULT) == YES) {
+					setflag(FLAG_UNUSED_0x020)
+					setflag(FLAG_UNUSED_0x021)
+					setflag(FLAG_UNUSED_0x022)
+					setflag(FLAG_UNUSED_0x023)
+					setflag(FLAG_UNUSED_0x024)
+					setflag(FLAG_UNUSED_0x025)
+					msgbox("Successfully randomized.")
+				} else {
+					clearflag(FLAG_UNUSED_0x020)
+					clearflag(FLAG_UNUSED_0x021)
+					clearflag(FLAG_UNUSED_0x022)
+					clearflag(FLAG_UNUSED_0x023)
+					clearflag(FLAG_UNUSED_0x024)
+					clearflag(FLAG_UNUSED_0x025)
+				}
+		}
+		elif (var(VAR_RESULT) == 7){
+			call(Options_Menu)
+		}
+	} while (var(VAR_RESULT) < 7)
+	call(Options_Menu)
+}
