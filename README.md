@@ -2,6 +2,21 @@
 
 pokeemerald-expansion is ***a romhack base*** based off pret's [pokeemerald](https://github.com/pret/pokeemerald) decompilation project. ***It is NOT a playable romhack,*** but it has multiple features available to romhackers so that they can create their own games, so it's not meant to be played on its own.
 
+# pokeemerald-gamecorner-expanded
+Hello! This is an an all-in-one package to expand the Mauville Game Corner, that, in its current state, isn't configurable.
+It uses several unused Emerald flags, vars, and FR/LG tracks to make things work... Please keep this in mind if you would like to use this for your own hack.
+
+More specifically, this adds 4 pinball mini-games, Flappy Bird, Block Stacker, Snake, Blackjack, Voltorb Flip, Plinko, Mauville Derby, and Gacha Machines into the Game Corner.
+
+THIS IS CURRENTLY NOT COMPATIBLE WITH EMERALD EXPANSION!
+
+Big thank you to huderlem (Pokemon Pinball to Emerald), and Pokeabbie (Voltorb Flip from Emerald Rogue). All I really did for these was some graphics, music, and code to work with coins. They deserve the real credits here.
+Also thank you to Viperio, who made an initial Snake for Pokemon Emerald that I based my code on.
+
+...
+
+This is a decompilation of Pokémon Emerald.
+
 ## Should I use this or vanilla pokeemerald for my hack?
 The main advantage of using vanilla pokeemerald as a base is being able to link with other official GBA Pokémon games for battles and trading, pokeemerald-expansion can battle and trade with itself out of the box. If you don't mind losing full vanilla compatiblitity, we recommend using pokeemerald-expansion. Otherwise, use pret's pokeemerald. You'll still receive documentation improvements from pret, as we regurlarly incorporate pret's documentation changes.
 

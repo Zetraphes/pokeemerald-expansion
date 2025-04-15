@@ -808,6 +808,8 @@ const u8 gText_PlayerScurriedToCenter[] = _("{PLAYER} scurried to a POKéMON CEN
 const u8 gText_PlayerScurriedBackHome[] = _("{PLAYER} scurried back home, protecting\nthe exhausted and fainted POKéMON from\nfurther harm…\p");
 const u8 gText_HatchedFromEgg[] = _("{STR_VAR_1} hatched from the EGG!");
 const u8 gText_NicknameHatchPrompt[] = _("Would you like to nickname the newly\nhatched {STR_VAR_1}?");
+const u8 gText_FromGacha[] = _("You got {STR_VAR_1}!");
+const u8 gText_NicknameGacha[] = _("Would you like to give {STR_VAR_1}\na nickname?");
 ALIGNED(4) const u8 gText_ReadyPickBerry[] = _("Are you ready to BERRY-CRUSH?\nPlease pick a BERRY for use.\p");
 ALIGNED(4) const u8 gText_WaitForAllChooseBerry[] = _("Please wait while each member\nchooses a BERRY.");
 ALIGNED(4) const u8 gText_EndedWithXUnitsPowder[] = _("{PAUSE_MUSIC}{PLAY_BGM MUS_LEVEL_UP}You ended up with {STR_VAR_1} units of\nsilky-smooth BERRY POWDER.{RESUME_MUSIC}\pYour total amount of BERRY POWDER\nis {STR_VAR_2}.\p");
@@ -1295,3 +1297,24 @@ const u8 gText_PM[] = _("PM");
 const u8 gText_Relearn[] = _("{START_BUTTON} RELEARN"); // future note: don't decap this, because it mimics the summary screen BG graphics which will not get decapped
 const u8 gText_Rename[] = _("RENAME");
 const u8 gText_CannotSendMonToBoxHM[] = _("Cannot send that mon to the box,\nbecause it knows a HM move.{PAUSE_UNTIL_PRESS}");
+
+// Gamecorner Expanded exchange
+const u8 gText_RareCandy[] = _("RARE CANDY{CLEAR_TO 0x48}4,000 COINS");
+const u8 gText_WStone[] = _("WATER STONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_FStone[] = _("FIRE STONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_LStone[] = _("LEAF STONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_TStone[] = _("THUNDERSTONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_MStone[] = _("MOON STONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_SStone[] = _("SUN STONE{CLEAR_TO 0x48}2,000 COINS");
+const u8 gText_ChoiceB[] = _("CHOICE BAND{CLEAR_TO 0x48}4,500 COINS");
+const u8 gText_BrightP[] = _("BRIGHTPOWDER{CLEAR_TO 0x48}4,500 COINS");
+
+// Blackjack
+const u8 gText_Bust[] = _("BUST!");
+const u8 gText_YouLose[] = _("You lose!");
+const u8 gText_YouWin[] = _("You win!");
+const u8 gText_Push[] = _("PUSH!");
+const u8 gText_BlackJack[] = _("BLACKJACK!");
+const u8 gText_Betting[] = _("Your current\nbet is ¥{STR_VAR_1}.");
+const u8 gText_NoBetting[] = _("Your current\nbet is ¥0.");
+const u8 gText_NoMoney[] = _("You do not have\nenough COINS.");
